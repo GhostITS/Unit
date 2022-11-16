@@ -1,3 +1,8 @@
+/*
+C++ 实现类似 C#这种无需关心类型的打印功能 Console. WriteLine("{0} and {2}",1.2);
+author: ghost
+*/
+
 #include <iostream>
 #include <vector>
 
@@ -133,21 +138,11 @@ struct UserDefineType
     int a;
 };
 
-
 int main()
 {
-    int a=1;
-    double c=2;
-    void*p =&a;
-    void*p2 =&c;
-
-    cout<<typeid(a).name()<<" "<<typeid(c).name()
-    <<" "<<typeid(p).name()
-    <<" "<<typeid(p2).name()
-    <<endl;
     UserDefineType userData;
-    fmtPrint("int{} float{}", 1, 1.1);
-    fmtPrint("int {} str{}", 1, "1.1");
-    fmtPrint("int {} userData{}", 1, userData);
+    fmtPrint("int {} float {}", 1, 1.1);
+    fmtPrint("int {} str {}", 1, "1.1");
+    fmtPrint("int {} userData {}", 1, userData);
     return 0;
 }
